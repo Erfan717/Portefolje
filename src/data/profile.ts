@@ -62,18 +62,13 @@ export const profile: Profile = {
   skillGroups: [
     {
       label: 'Språk',
-      items: ['TypeScript', 'JavaScript', 'Python', 'SQL']
+      items: ['TypeScript', 'C#', 'Python', 'SQL', `HTML`,]
     },
     {
       label: 'Rammeverk og verktøy',
-      items: ['React', 'Node.js', 'Express', 'Vite', 'Jest', 'Cypress']
+      items: ['React', `ASP.Net Core`, `Entity Framework`, 'Git', 'Docker', `VS Code`, `xUnit`, `ChatGPT`, `GitHub Copilot`]
     },
-    {
-      label: 'Arbeidsflyt',
-      items: ['Git', 'GitHub Actions', 'Docker', 'Figma', 'Design Systems']
-    }
   ],
-  aiTools: ['ChatGPT', 'GitHub Copilot', 'OpenAI API', 'Notion AI'],
   projects: [
     {
       name: 'Studieplanlegger',
