@@ -50,13 +50,6 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="ai-tools" title="AI-verktøy" description="Verktøy jeg bruker for raskere leveranser">
-          <div className="tag-row">
-            {aiTools.map((tool) => (
-              <Tag key={tool}>{tool}</Tag>
-            ))}
-          </div>
-        </Section>
 
         <Section id="projects" title="Prosjekter" description="Utvalgte prosjekter med kort beskrivelse">
           <div className="grid grid--three">
