@@ -4,8 +4,11 @@ export type ProjectLink = {
 };
 
 export type Project = {
+  id: string;
   name: string;
   description: string;
+  longDescription?: string;
+  imageUrl?: string;
   tags: string[];
   links?: ProjectLink;
 };
@@ -58,29 +61,35 @@ export const profile: Profile = {
         },
         {
             label: 'Rammeverk og verktøy',
-            items: ['React', `ASP.Net Core`, `Entity Framework`, 'Git', 'Docker', `VS Code`, `xUnit`, `ChatGPT`, `GitHub Copilot`]
-        },
+            items: ['React', 'ASP.Net Core', 'Entity Framework', 'Git', 'Docker', 'VS Code', 'xUnit', 'ChatGPT', 'GitHub Copilot']
+        }
     ],
     projects: [
         {
+            id: 'aor',
             name: 'AOR',
             description: 'Fullstack webapplikasjon for registrering og administrasjon av data, utviklet med fokus på struktur, sikkerhet og skalerbarhet.',
+            longDescription: 'Dette er et større gruppeprosjekt ... (Legg til mer info her).',
             tags: ['C#', 'ASP.Net Core', 'MVC'],
             links: {
                 github: 'https://github.com/MGumpen/aor.git'
             }
         },
         {
+            id: 'sensorboard',
             name: 'SensorBoard',
             description: 'Dashboard for IoT-sensorer med websockets, filtrering og sanntidsvarsler.',
+            longDescription: 'SensorBoard er utviklet for å overvåke en rekke IoT-enheter i sanntid...',
             tags: ['Node.js', 'WebSocket', 'React'],
             links: {
                 github: 'https://github.com/Erfan717/sensorboard'
             }
         },
         {
+            id: 'ai-notatassistent',
             name: 'AI Notatassistent',
             description: 'Eksperiment med OpenAI API for å oppsummere forelesningsnotater og foreslå spørsmål.',
+            longDescription: 'Dette prosjektet bruker GPT-4 o for å analysere tekstinput...',
             tags: ['OpenAI', 'TypeScript', 'Prompt Engineering'],
             links: {
                 github: 'https://github.com/Erfan717/ai-notes'
