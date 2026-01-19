@@ -40,28 +40,23 @@ export type Profile = {
 
 export const profile: Profile = {
   name: 'Erfan Sarwari',
-  study: 'Bachelor i Informasjonsteknologi, OsloMet',
-  location: 'Oslo, Norge',
+  study: 'Bachelor i Informasjonssystemer, Universitetet i Agder',
+  location: 'Kristiansand, Norge',
   intro:
-    'Jeg er en nysgjerrig IT-student og juniorutvikler som liker å bygge nyttige løsninger med React, TypeScript og AI-verktøy. Jeg trives i tverrfaglige team og jobber strukturert med fokus på kvalitet.',
+    'Jeg er en nysgjerrig IT-student og juniorutvikler som liker å bygge nyttige løsninger. Jeg trives i tverrfaglige team og jobber strukturert med fokus på kvalitet.',
   experience: [
     {
-      title: 'Bachelor i Informasjonsteknologi',
-      organization: 'OsloMet',
+      title: 'Bachelor i Informasjonssystemer',
+      organization: 'Universitetet i Agder',
       period: '2024 – nå',
       details: 'Fokus på webutvikling, databaser, skyplattformer og samarbeid i agile team.'
     },
+
     {
-      title: 'Sommerstudent IT',
-      organization: 'Statens IT',
-      period: 'Sommer 2025',
-      details: 'Automatiserte rapportering med Python, satte opp dashboards og brukte GitHub Copilot i parprogrammering.'
-    },
-    {
-      title: 'Prosjekt: Smarte Ruter',
+      title: 'Prosjekt: AOR',
       organization: 'Studentprosjekt',
-      period: '2024',
-      details: 'Bygget en React + Node løsning for å vise sanntidsdata og forslag til optimal reiserute.'
+      period: '2025',
+      details: 'Fullstack webapplikasjon for registrering og administrasjon av data, utviklet med fokus på struktur, sikkerhet og skalerbarhet.'
     }
   ],
   skillGroups: [
@@ -106,7 +101,7 @@ export const profile: Profile = {
     }
   ],
   contact: {
-    email: 'erfan.sarwari@example.com',
+    email: 'erfans1205@gmail.com',
     linkedIn: 'https://www.linkedin.com/in/erfan-sarwari',
     github: 'https://github.com/Erfan717'
   }
