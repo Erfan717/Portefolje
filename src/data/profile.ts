@@ -50,13 +50,6 @@ export const profile: Profile = {
             period: '2024 – nå',
             details: 'Fokus på webutvikling, databaser, skyplattformer og samarbeid i agile team.'
         },
-
-        {
-            title: 'Prosjekt: AOR',
-            organization: 'Studentprosjekt',
-            period: '2025',
-            details: 'Fullstack webapplikasjon for registrering og administrasjon av data, utviklet med fokus på struktur, sikkerhet og skalerbarhet.'
-        }
     ],
     skillGroups: [
         {
@@ -70,11 +63,11 @@ export const profile: Profile = {
     ],
     projects: [
         {
-            name: 'Studieplanlegger',
-            description: 'Planlegger for emner med drag-and-drop, påminnelser og progresjonstavle.',
-            tags: ['React', 'TypeScript', 'Drag & Drop'],
+            name: 'AOR',
+            description: 'Fullstack webapplikasjon for registrering og administrasjon av data, utviklet med fokus på struktur, sikkerhet og skalerbarhet.',
+            tags: ['C#', 'ASP.Net Core', 'MVC'],
             links: {
-                github: 'https://github.com/Erfan717/studieplanlegger'
+                github: 'https://github.com/MGumpen/aor.git'
             }
         },
         {
