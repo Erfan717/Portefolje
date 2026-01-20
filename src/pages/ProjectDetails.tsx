@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 import { profile } from '../data/profile';
 import { Tag } from '../components/Tag';
 import { Card } from '../components/Card';
@@ -6,6 +8,7 @@ import { Section } from '../components/Section';
 
 export function ProjectDetails() {
   const { id } = useParams<{ id: string }>();
+  
   // Use loose comparison or normalization if IDs might vary, but strict check is fine for now
   const project = profile.projects.find((p) => p.id === id);
 
@@ -21,7 +24,13 @@ export function ProjectDetails() {
   const { name, description, longDescription, imageUrl, tags, links } = project;
 
   return (
-    <div className="page">
+    <motion.div 
+      className="page"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div style={{ marginBottom: '24px' }}>
         <Link to="/" className="button button--ghost">← Tilbake</Link>
       </div>
@@ -68,6 +77,6 @@ export function ProjectDetails() {
           </Card>
         </Section>
       </main>
-    </div>
+    </motion.div>
   );
 }

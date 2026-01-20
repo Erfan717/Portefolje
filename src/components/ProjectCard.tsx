@@ -13,7 +13,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   const handleCardClick = () => {
     navigate(`/project/${id}`);
-    window.scrollTo(0, 0);
   };
 
   const handleLinkClick = (e: React.MouseEvent) => {

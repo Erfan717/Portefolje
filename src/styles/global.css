@@ -2,12 +2,13 @@
 
 :root {
   --bg: #0f172a;
-  --card: #1e293b;
+  /* changed from #1e293b to a semi-transparent dark blue to blend with background */
+  --card: rgba(15, 23, 42, 0.65);
   --text: #f1f5f9;
-  --muted: #94a3b8;
+  --muted: #cbd5e1;
   --accent: #3b82f6;
-  --border: #334155;
-  --shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+  --border: rgba(148, 163, 184, 0.15);
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
   --radius: 16px;
   --max-width: 1120px;
 }
@@ -18,11 +19,18 @@
   padding: 0;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 25%),
-    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 32%),
-    var(--bg);
+  background: 
+    linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.7)),
+    url('../assets/971.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text);
   min-height: 100vh;
   line-height: 1.7;
@@ -38,9 +46,11 @@ a {
   margin: 0 auto;
   padding: 48px 24px 96px;
 }
-
 .hero {
-  background: linear-gradient(135deg, var(--card), #0f172a);
+  /* Using a glassmorphism style similar to cards for consistency */
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 40px;
@@ -108,8 +118,9 @@ a {
 }
 
 .button--ghost {
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--text);
+  border-color: transparent;
 }
 
 .content {
@@ -150,11 +161,14 @@ a {
 
 .card {
   background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   height: 100%;
+  /* Removed manual transition on interaction props to let motion handle it, keeping base transitions */
 }
 
 .card--interactive {

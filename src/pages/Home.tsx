@@ -21,7 +21,20 @@ const itemVariants = {
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 2.0 }
+    transition: { duration: 0.5 }
+  }
+};
+
+const scrollVariants = {
+  offscreen: { opacity: 0, y: 50 },
+  onscreen: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
   }
 };
 
@@ -31,12 +44,18 @@ export function Home() {
   return (
     <motion.div 
       className="page"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.2, ease: "easeInOut" } }}
     >
-      <header className="hero">
-        <motion.div variants={itemVariants}>
+      <motion.header 
+        className="hero"
+        variants={scrollVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <div>
           <p className="hero__kicker">Portefølje · IT-student</p>
           <h1 className="hero__title">{name}</h1>
           <p className="hero__subtitle">{study}</p>
@@ -62,8 +81,8 @@ export function Home() {
               LinkedIn
             </motion.a>
           </div>
-        </motion.div>
-      </header>
+        </div>
+      </motion.header>
 
 
       <main className="content">
@@ -72,10 +91,10 @@ export function Home() {
             {experience.map((item, index) => (
               <motion.div 
                 key={item.title} 
-                variants={itemVariants}
-                viewport={{ once: true }}
-                whileInView="visible"
-                initial="hidden"
+                variants={scrollVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.2 }}
                 custom={index}
               >
                 <Card title={item.title} meta={`${item.organization} · ${item.period}`}>
@@ -91,10 +110,10 @@ export function Home() {
             {skillGroups.map((group, index) => (
                <motion.div 
                  key={group.label} 
-                 variants={itemVariants}
-                 viewport={{ once: true }}
-                 whileInView="visible"
-                 initial="hidden"
+                 variants={scrollVariants}
+                 initial="offscreen"
+                 whileInView="onscreen"
+                 viewport={{ once: false, amount: 0.2 }}
                  custom={index}
                >
                 <Card title={group.label}>
@@ -112,10 +131,10 @@ export function Home() {
         <Section id="ai-tools" title="AI-verktøy" description="Verktøy jeg bruker for raskere leveranser">
           <motion.div 
             className="tag-row"
-            variants={itemVariants}
-            whileInView="visible"
-            initial="hidden"
-            viewport={{ once: true }}
+            variants={scrollVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.2 }}
           >
             {aiTools.map((tool) => (
               <Tag key={tool}>{tool}</Tag>
@@ -128,10 +147,10 @@ export function Home() {
             {projects.map((project, index) => (
               <motion.div 
                 key={project.id}
-                variants={itemVariants}
-                viewport={{ once: true }}
-                whileInView="visible"
-                initial="hidden"
+                variants={scrollVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.2 }}
                 custom={index}
               >
                 <ProjectCard project={project} />
@@ -142,17 +161,32 @@ export function Home() {
 
         <Section id="contact" title="Kontakt" description="Ta gjerne kontakt for en prat eller samarbeid">
           <div className="contact-grid">
-            <motion.div variants={itemVariants} whileInView="visible" initial="hidden" viewport={{ once: true }}>
+            <motion.div 
+              variants={scrollVariants} 
+              initial="offscreen" 
+              whileInView="onscreen" 
+              viewport={{ once: false, amount: 0.2 }}
+            >
               <Card title="E-post" footer={<a className="text-link" href={`mailto:${contact.email}`}>{contact.email}</a>}>
                 <p className="muted">Raskest svar på hverdager.</p>
               </Card>
             </motion.div>
-            <motion.div variants={itemVariants} whileInView="visible" initial="hidden" viewport={{ once: true }}>
+            <motion.div 
+              variants={scrollVariants} 
+              initial="offscreen" 
+              whileInView="onscreen" 
+              viewport={{ once: false, amount: 0.2 }}
+            >
               <Card title="LinkedIn" footer={<a className="text-link" href={contact.linkedIn} target="_blank" rel="noreferrer">{contact.linkedIn}</a>}>
                 <p className="muted">Koble for faglig nettverk og oppdateringer.</p>
               </Card>
             </motion.div>
-            <motion.div variants={itemVariants} whileInView="visible" initial="hidden" viewport={{ once: true }}>
+            <motion.div 
+              variants={scrollVariants} 
+              initial="offscreen" 
+              whileInView="onscreen" 
+              viewport={{ once: false, amount: 0.2 }}
+            >
               <Card title="GitHub" footer={<a className="text-link" href={contact.github} target="_blank" rel="noreferrer">{contact.github}</a>}>
                 <p className="muted">Kode, eksperimenter og studentprosjekter.</p>
               </Card>
