@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import { Card } from '../components/Card';
 import { ProjectCard } from '../components/ProjectCard';
 import { Section } from '../components/Section';
@@ -6,7 +6,7 @@ import { Tag } from '../components/Tag';
 import { profile } from '../data/profile';
 
 // Animation variants
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -16,16 +16,16 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5 }
+    transition: { duration: 3.0 }
   }
 };
 
-const scrollVariants = {
+const scrollVariants: Variants = {
   offscreen: { opacity: 0, y: 50 },
   onscreen: { 
     opacity: 1, 
@@ -33,10 +33,11 @@ const scrollVariants = {
     transition: { 
       type: "spring",
       bounce: 0.4,
-      duration: 0.8
+      duration: 2.0
     }
   }
 };
+
 
 export function Home() {
   const { name, study, location, intro, experience, skillGroups, aiTools, projects, contact } = profile;
@@ -55,7 +56,10 @@ export function Home() {
         whileInView="onscreen"
         viewport={{ once: false, amount: 0.2 }}
       >
-        <div>
+        <div style={{ position: 'absolute', top: 0, right: 0, width: '50%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
+            <PlaneAnimation />
+        </div>
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '60%' }}>
           <p className="hero__kicker">Portefølje · IT-student</p>
           <h1 className="hero__title">{name}</h1>
           <p className="hero__subtitle">{study}</p>
