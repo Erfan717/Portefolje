@@ -56,9 +56,6 @@ export function Home() {
         whileInView="onscreen"
         viewport={{ once: false, amount: 0.2 }}
       >
-        <div style={{ position: 'absolute', top: 0, right: 0, width: '50%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
-            <PlaneAnimation />
-        </div>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '60%' }}>
           <p className="hero__kicker">Portefølje · IT-student</p>
           <h1 className="hero__title">{name}</h1>

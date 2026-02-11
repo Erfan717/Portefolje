@@ -69,20 +69,20 @@ export const profile: Profile = {
             id: 'aor',
             name: 'AOR',
             description: 'Fullstack webapplikasjon for registrering og administrasjon av data, utviklet med fokus på struktur, sikkerhet og skalerbarhet.',
-            longDescription: 'Dette er et større gruppeprosjekt ... (Legg til mer info her).',
+            longDescription: 'AOR er en applikasjon laget for at piloter og andre flybesetningsmedlemmer skal kunne rapportere hindringer de oppdager under flyvning som ikke er registrert i deres systemer. Som crew kan man logge inn i applikasjonen, og får da tilgang til et kart som viser posisjonen til brukeren. Brukeren kan klikke på en at hurtigknappene på skjermen for å registrere den hindringen de ser foran seg. Ved å legge til punkter på kartet, registreres posisjonen til hindringen automatisk. Når brukeren er fornøyd med plassering av posisjonspunktene, kan brukeren fylle ut et skjema med informasjon om den aktuelle hindringen. Deretter kan brukeren lagre informasjonen som draft til senere redigering, eller sende inn rapporten til registerfører hos NRL teamet til Kartverket. Brukeren kan også finne en liste over sine egne rapporter, hvor draft også lagres, og se status på innsendte rapporter.',
             tags: ['C#', 'ASP.Net Core', 'MVC'],
             links: {
                 github: 'https://github.com/MGumpen/aor.git'
             }
         },
         {
-            id: 'sensorboard',
-            name: 'SensorBoard',
-            description: 'Dashboard for IoT-sensorer med websockets, filtrering og sanntidsvarsler.',
-            longDescription: 'SensorBoard er utviklet for å overvåke en rekke IoT-enheter i sanntid...',
-            tags: ['Node.js', 'WebSocket', 'React'],
+            id: 'safemap',
+            name: 'SafeMap',
+            description: 'Fullstack webapplikajon ment for å rangere områeder i Norge ut ifra hvor godt forberedt de er med tanke på total beredskap. Fokus på ',
+            longDescription: 'SafeMap er et GIS-basert prosjekt som undersøker totalforsvaret i Norge gjennom geografisk analyse av samfunnets beredskap og robusthet. Prosjektet bruker åpne geodata til å identifisere sårbarheter, avhengigheter og tilgjengelighet knyttet til innbyggere og kritisk infrastruktur, med mål om å støtte både offentlige beslutninger og økt beredskapsforståelse hos befolkningen.',
+            tags: ['Python', 'FastApi', 'SupaBase', "QGIS", "DBeaver" ],
             links: {
-                github: 'https://github.com/Erfan717/sensorboard'
+                github: 'https://github.com/MGumpen/safemap'
             }
         },
         {
@@ -98,7 +98,7 @@ export const profile: Profile = {
     ],
     contact: {
         email: 'erfans1205@gmail.com',
-        linkedIn: 'https://www.linkedin.com/in/erfan-sarwari',
+        linkedIn: 'https://www.linkedin.com/in/erfan-sarwari-4b652b3a0/',
         github: 'https://github.com/Erfan717'
     },
     aiTools: []
